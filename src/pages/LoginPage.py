@@ -4,6 +4,16 @@ from .BasePage import BasePage
 
 
 class LoginPage(BasePage):
+    @allure.step('Проверка отклонения некорректных регистрационных данных')
+    def verify_invalid_signup(self, name, email):
+        self.enter_text(self.SIGNUP_NAME_INPUT, name)
+        self.enter_text(self.SIGNUP_EMAIL_INPUT, email)
+        self.click(self.SIGNUP_BUTTON)
+        field = self.find_element(self.SIGNUP_NAME_INPUT if not name else self.SIGNUP_EMAIL_INPUT)
+        assert not self.execute_script('return arguments[0].checkValidity()', field)
+        assert field.get_attribute('validationMessage')
+        return self.check_login_page_is_opened()
+
     # Элементы на странице логина/регистрации
     LOGIN_HEADER = (By.CSS_SELECTOR, ".login-form h2")
     SIGNUP_HEADER = (By.CSS_SELECTOR, ".signup-form h2")
@@ -37,9 +47,9 @@ class LoginPage(BasePage):
         self.click(self.LOGIN_BUTTON)
 
         if wrong:
-            return self
+            return self.verify_login_error()
         from .MainPage import MainPage
-        return MainPage(self.driver, self.base_url)
+        return MainPage(self.driver, self.base_url).verify_logged_in_as()
 
     @allure.step("Регистрация пользователя с именем '{name}' и email '{email}'")
     def signup_with_credentials(self, name, email, wrong=False):
@@ -49,9 +59,11 @@ class LoginPage(BasePage):
         self.click(self.SIGNUP_BUTTON)
 
         if wrong:
-            return self
+            return self.verify_signup_error()
         from .SignupPage import SignupPage
-        return SignupPage(self.driver, self.base_url)
+        page = SignupPage(self.driver, self.base_url)
+        page.wait_for_element_visible(page.PASSWORD)
+        return page
 
     @allure.step("Проверка отображения ошибки неверных учетных данных при входе")
     def verify_login_error(self):

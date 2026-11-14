@@ -38,12 +38,17 @@ def driver(request, grid_url):
     instance = (webdriver.Remote(command_executor=grid_url, options=options)
                 if request.config.getoption('--mode') == 'remote' else factory(options=options))
     try:
+        from src.metrics import Metrics
+        instance.metrics = Metrics(request.node.nodeid, browser, uuid.uuid4().hex)
         instance.implicitly_wait(0)
         instance.set_page_load_timeout(60)
         instance.set_window_size(1440, 1000)
         yield instance
     finally:
-        instance.quit()
+        try:
+            instance.metrics.save()
+        finally:
+            instance.quit()
 
 
 @pytest.hookimpl(hookwrapper=True)
@@ -78,3 +83,12 @@ def pytest_runtest_makereport(item, call):
 @pytest.fixture
 def unique_user():
     return dict(name='Test User', email=f'qa_{uuid.uuid4().hex}@example.com', password=uuid.uuid4().hex)
+
+
+@pytest.fixture(autouse=True)
+def report_labels(request):
+    allure.dynamic.epic('Automation Exercise')
+    allure.dynamic.feature(request.node.path.stem)
+    allure.dynamic.story(request.node.originalname or request.node.name)
+    allure.dynamic.severity(allure.severity_level.NORMAL)
+    allure.dynamic.tag(*[m.name for m in request.node.iter_markers()])

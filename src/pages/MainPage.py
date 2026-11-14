@@ -30,7 +30,7 @@ class MainPage(BasePage):
         """Кликает по кнопке Signup / Login и возвращает страницу LoginPage."""
         self.click(self.SIGNUP_LOGIN_BTN)
         from .LoginPage import LoginPage
-        return LoginPage(self.driver, self.base_url)
+        return LoginPage(self.driver, self.base_url).check_login_page_is_opened()
 
     @allure.step("Проверка отображения блока 'Logged in as'")
     def verify_logged_in_as(self):
@@ -58,7 +58,9 @@ class MainPage(BasePage):
     def click_products(self):
         self.find_element(self.PRODUCTS_BUTTON).click()
         from .ProductsPage import ProductsPage
-        return ProductsPage(self.driver, self.base_url)
+        page = ProductsPage(self.driver, self.base_url)
+        page.wait_for_element_visible(page.ITEMS)
+        return page
 
     @allure.step("Нажатие 'View Product' у первого товара в списке")
     def click_first_view_product(self):

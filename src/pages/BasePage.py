@@ -1,4 +1,6 @@
 from urllib.parse import urljoin
+from contextlib import nullcontext
+from functools import wraps
 from src.config.settings import TIMEOUT
 import allure
 from selenium.webdriver.support.ui import WebDriverWait
@@ -6,7 +8,22 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 
+def timed(method):
+    @wraps(method)
+    def wrapped(self, *args, **kwargs):
+        metrics = getattr(self.driver, 'metrics', None)
+        with metrics.measure(type(self).__name__ + '.' + method.__name__) if metrics else nullcontext():
+            return method(self, *args, **kwargs)
+    return wrapped
+
+
 class BasePage:
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        for name, method in list(cls.__dict__.items()):
+            if callable(method) and not name.startswith('_'):
+                setattr(cls, name, timed(method))
+
     def __init__(self, driver, base_url, timeout=TIMEOUT):
         self.driver = driver
         self.base_url = base_url
@@ -105,4 +122,14 @@ class BasePage:
 
     def wait_for_url_contains(self, value):
         WebDriverWait(self.driver, self.timeout).until(EC.url_contains(value))
+        return self
+
+    @allure.step("???????? ?? ???????")
+    def subscribe(self, email):
+        from selenium.webdriver.common.by import By
+        self.scroll_to_element((By.ID, 'susbscribe_email'))
+        assert self.get_element_text((By.CSS_SELECTOR, '.single-widget h2')) == 'SUBSCRIPTION'
+        self.enter_text((By.ID, 'susbscribe_email'), email)
+        self.click((By.ID, 'subscribe'))
+        assert self.get_element_text((By.ID, 'success-subscribe')) == 'You have been successfully subscribed!'
         return self

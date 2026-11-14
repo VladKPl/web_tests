@@ -5,6 +5,13 @@ from .BasePage import BasePage
 
 
 class SignupPage(BasePage):
+    NAME = (By.ID, 'name')
+
+    @allure.step('Проверка сохранения имени в форме')
+    def verify_name(self, expected):
+        assert self.get_attribute(self.NAME, 'value') == expected
+        return self
+
     PASSWORD = (By.ID, 'password')
     TITLE = (By.ID, 'id_gender1')
     DAYS = (By.ID, 'days')
