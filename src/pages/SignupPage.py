@@ -25,6 +25,18 @@ class SignupPage(BasePage):
         'first_name', 'last_name', 'company', 'address1', 'address2',
         'state', 'city', 'zipcode', 'mobile_number')}
 
+    @allure.step('Обязательные поля полной формы не принимают пустые значения')
+    def verify_required_fields(self):
+        for locator in (self.PASSWORD, *[v for k, v in self.ADDRESS_FIELDS.items() if k not in ('company', 'address2')]):
+            field = self.find_element(locator)
+            assert field.get_attribute('required') == 'true'
+            assert not self.execute_script('return arguments[0].checkValidity()', field)
+            assert field.get_attribute('validationMessage')
+        self.click(self.CREATE)
+        self.wait_for_url_contains('/signup')
+        self.wait_for_element_visible(self.PASSWORD)
+        return self
+
     def register_user(self, user):
         # Context step deliberately excludes password and user arguments.
         with allure.step('Заполнение формы и создание аккаунта'):
@@ -40,6 +52,7 @@ class SignupPage(BasePage):
             for key, locator in self.ADDRESS_FIELDS.items():
                 self.enter_text(locator, values[key])
             Select(self.find_element(self.COUNTRY)).select_by_visible_text('Canada')
+            self.driver.pending_account = user
             self.click(self.CREATE)
             from .AccountCreatedPage import AccountCreatedPage
             return AccountCreatedPage(self.driver, self.base_url).verify_created_msg()

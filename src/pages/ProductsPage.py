@@ -2,6 +2,7 @@ import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 from .BasePage import BasePage
 
 
@@ -10,6 +11,7 @@ class ProductsPage(BasePage):
     NAME = (By.CSS_SELECTOR, 'p')
     PRICE = (By.CSS_SELECTOR, 'h2')
     ADD = (By.CSS_SELECTOR, '.add-to-cart')
+    OVERLAY_ADD = (By.CSS_SELECTOR, '.product-overlay .add-to-cart')
     CONTINUE = (By.CSS_SELECTOR, '#cartModal .close-modal')
     MODAL = (By.ID, 'cartModal')
     CART = (By.CSS_SELECTOR, '#cartModal a[href="/view_cart"]')
@@ -24,7 +26,14 @@ class ProductsPage(BasePage):
     def add_product(self, index=0):
         item = self.find_elements(self.ITEMS)[index]
         self.driver.execute_script('arguments[0].scrollIntoView({block:"center"})', item)
-        item.find_element(*self.ADD).click()
+        ActionChains(self.driver).move_to_element(item).perform()
+        wrapper = item.find_element(By.XPATH, '..')
+        button = wrapper.find_element(*self.OVERLAY_ADD)
+        WebDriverWait(self.driver, self.timeout).until(lambda _: self.driver.execute_script(
+            'const e=arguments[0],r=e.getBoundingClientRect();'
+            'const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);'
+            'return r.width>0 && r.height>0 && (hit===e || e.contains(hit));', button))
+        button.click()
         self.wait_for_element_visible(self.MODAL)
         return self
 

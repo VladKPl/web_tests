@@ -16,6 +16,7 @@ def test_password_field(driver, base_url, unique_user):
     page = MainPage(driver, base_url).open_main_page().click_signup_login().signup_with_credentials('QA', unique_user['email'])
     assert page.get_attribute(page.PASSWORD, 'type') == 'password'
     assert page.get_attribute(page.PASSWORD, 'required') == 'true'
+    page.verify_required_fields()
 
 
 @pytest.mark.parametrize('name', ["Anne O'Neil-Smith", 'A', 'A' * 100])

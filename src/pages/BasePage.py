@@ -55,7 +55,6 @@ class BasePage:
         element = self.wait_for_element_clickable(locator)
         element.click()
 
-    @allure.step("Ввод текста '{text}' в элемент с локатором: {locator}")
     def enter_text(self, locator, text):
         """Вводит текст в поле ввода по локатору."""
         element = self.wait_for_element_visible(locator)
@@ -124,7 +123,7 @@ class BasePage:
         WebDriverWait(self.driver, self.timeout).until(EC.url_contains(value))
         return self
 
-    @allure.step("???????? ?? ???????")
+    @allure.step("Подписка на новости")
     def subscribe(self, email):
         from selenium.webdriver.common.by import By
         self.scroll_to_element((By.ID, 'susbscribe_email'))

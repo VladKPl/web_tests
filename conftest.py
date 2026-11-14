@@ -27,7 +27,7 @@ def grid_url(request):
 
 
 @pytest.fixture
-def driver(request, grid_url):
+def driver(request, grid_url, base_url):
     browser = request.config.getoption('--browser')
     options = webdriver.ChromeOptions() if browser == 'chrome' else webdriver.FirefoxOptions()
     if request.config.getoption('--headless'):
@@ -46,9 +46,18 @@ def driver(request, grid_url):
         yield instance
     finally:
         try:
-            instance.metrics.save()
+            user = getattr(instance, 'pending_account', None)
+            if user:
+                from src.pages.MainPage import MainPage
+                home = MainPage(instance, base_url).open_main_page()
+                if not instance.find_elements(*home.LOGGED_AS):
+                    home.click_signup_login().login_with_credentials(user['email'], user['password'])
+                home.click_delete_account().verify_deleted_msg()
         finally:
-            instance.quit()
+            try:
+                instance.metrics.save()
+            finally:
+                instance.quit()
 
 
 @pytest.hookimpl(hookwrapper=True)
@@ -72,7 +81,8 @@ def pytest_runtest_makereport(item, call):
         try:
             entries = instance.get_log(kind)
             # Do not persist URLs, headers, request bodies or console messages.
-            safe = [{'level': e.get('level'), 'timestamp': e.get('timestamp')} for e in entries]
+            from src.diagnostics import sanitize
+            safe = sanitize(entries, kind)
             data = json.dumps({'kind': kind, 'entries': safe})
         except Exception as exc:
             data = json.dumps({'kind': kind, 'unavailable': type(exc).__name__})
@@ -82,7 +92,10 @@ def pytest_runtest_makereport(item, call):
 
 @pytest.fixture
 def unique_user():
-    return dict(name='Test User', email=f'qa_{uuid.uuid4().hex}@example.com', password=uuid.uuid4().hex)
+    class TestUser(dict):
+        def __repr__(self):
+            return repr({k: '[REDACTED]' if k == 'password' else v for k, v in self.items()})
+    return TestUser(name='Test User', email=f'qa_{uuid.uuid4().hex}@example.com', password=uuid.uuid4().hex)
 
 
 @pytest.fixture(autouse=True)

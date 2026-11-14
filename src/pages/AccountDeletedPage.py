@@ -11,6 +11,7 @@ class AccountDeletedPage(BasePage):
     def verify_deleted_msg(self):
         """Проверяет видимость и возвращает сообщение."""
         assert self.wait_for_element_visible(self.HEADER).is_displayed(), "Сообщение об удалении аккаунта не найдено"
+        self.driver.pending_account = None
         return self
 
     @allure.step("Нажимаем кнопку 'Continue' на странице удаления аккаунта")

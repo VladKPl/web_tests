@@ -38,7 +38,6 @@ class LoginPage(BasePage):
         assert self.wait_for_element_visible(self.SIGNUP_HEADER).is_displayed(), "Форма регистрации не найдена"
         return self
 
-    @allure.step("Авторизация пользователя с email: '{email}'")
     def login_with_credentials(self, email, password, wrong=False):
         """Вводит данные пользователя и выполняет вход."""
         # Явно ждем загрузку страницы, чтобы поля были кликабельны

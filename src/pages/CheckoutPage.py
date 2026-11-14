@@ -13,7 +13,7 @@ class CheckoutPage(CartPage):
     def verify_address_and_order(self):
         for locator in (self.DELIVERY, self.INVOICE):
             text = self.get_element_text(locator)
-            for value in ('Ivan Ivanov', 'Main St 10', 'Toronto Ontario', '12345', 'Canada'):
+            for value in ('Mr. Ivan Ivanov', 'QA', 'Main St 10', 'Suite 2', 'Toronto Ontario', '12345', 'Canada', '1234567'):
                 assert value in text
         assert self.items()
         return self
