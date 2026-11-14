@@ -1,0 +1,108 @@
+from urllib.parse import urljoin
+from src.config.settings import TIMEOUT
+import allure
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
+
+class BasePage:
+    def __init__(self, driver, base_url, timeout=TIMEOUT):
+        self.driver = driver
+        self.base_url = base_url
+        self.timeout = timeout
+
+    @allure.step("Открываем страницу по URL: {relative_url}")
+    def open(self, relative_url=""):
+        """Открывает страницу по относительному или полному URL."""
+        self.driver.get(urljoin(self.base_url + "/", relative_url))
+        return self
+
+    @allure.step("Ожидаем видимость элемента с локатором: {locator}")
+    def wait_for_element_visible(self, locator):
+        """Ждет, пока элемент станет видимым на странице."""
+        return WebDriverWait(self.driver, self.timeout).until(
+            EC.visibility_of_element_located(locator)
+        )
+
+    @allure.step("Ожидаем кликабельность элемента с локатором: {locator}")
+    def wait_for_element_clickable(self, locator):
+        """Ждет, пока элемент станет кликабельным."""
+        return WebDriverWait(self.driver, self.timeout).until(
+            EC.element_to_be_clickable(locator)
+        )
+
+    @allure.step("Клик по элементу с локатором: {locator}")
+    def click(self, locator):
+        """Кликает по элементу по локатору."""
+        element = self.wait_for_element_clickable(locator)
+        element.click()
+
+    @allure.step("Ввод текста '{text}' в элемент с локатором: {locator}")
+    def enter_text(self, locator, text):
+        """Вводит текст в поле ввода по локатору."""
+        element = self.wait_for_element_visible(locator)
+        element.clear()
+        element.send_keys(text)
+
+    @allure.step("Получаем текущий URL")
+    def get_current_url(self):
+        """Возвращает текущий URL страницы."""
+        return self.driver.current_url
+
+    @allure.step("Выбор значения '{value}' в выпадающем списке с локатором: {locator}")
+    def select_by_value(self, locator, value):
+        """Выбирает опцию в выпадающем списке по значению (value)."""
+        element = self.wait_for_element_visible(locator)
+        select_element = Select(element)
+        select_element.select_by_value(str(value))
+        return self
+
+    @allure.step("Поиск элемента в DOM дереве по локатору: {locator}")
+    def find_element(self, locator):
+        """Возвращает элемент, если он есть на странице."""
+        return WebDriverWait(self.driver, self.timeout).until(
+            EC.presence_of_element_located(locator),
+            message=f"Не удалось найти элемент по локатору: {locator}"
+        )
+
+    @allure.step("Поиск списка элементов в DOM дереве по локатору: {locator}")
+    def find_elements(self, locator, time=None):
+        """Возвращает список элементов, если они есть на странице."""
+        wait_timeout = time if time is not None else self.timeout
+        return WebDriverWait(self.driver, wait_timeout).until(
+            EC.presence_of_all_elements_located(locator),
+            message=f"Не удалось найти элементы по локатору: {locator}"
+        )
+
+    @allure.step("Наведение мыши на элемент {hover_locator} (индекс: {index}) и клик по {click_locator}")
+    def hover_and_click(self, hover_locator, click_locator, index=0):
+        """Наводит мышь на элемент (hover) и кликает по другому элементу."""
+        actions = ActionChains(self.driver)
+        hover_elements = self.find_elements(hover_locator)
+        hover_element = hover_elements[index]
+        
+        actions.move_to_element(hover_element).perform()
+        self.find_element(click_locator).click()
+    wait_for_element_present = find_element
+
+    def get_element_text(self, locator):
+        return self.wait_for_element_visible(locator).text
+
+    def get_attribute(self, locator, attribute):
+        return self.find_element(locator).get_attribute(attribute)
+
+    def scroll_to_element(self, locator):
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'})", self.find_element(locator))
+        return self
+
+    def hover(self, locator):
+        ActionChains(self.driver).move_to_element(self.find_element(locator)).perform()
+        return self
+
+    def execute_script(self, script, *args):
+        return self.driver.execute_script(script, *args)
+
+    def wait_for_url_contains(self, value):
+        WebDriverWait(self.driver, self.timeout).until(EC.url_contains(value))
+        return self
