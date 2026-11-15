@@ -9,3 +9,5 @@ allure-report/
 *.log
 reports/logs/
 reports/screenshots/
+tools/allure-2.32.0/
+tools/allure.zip

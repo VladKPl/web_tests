@@ -1,4 +1,4 @@
-﻿# Automation Exercise UI
+# Automation Exercise UI
 
 Проект Selenium + Pytest для Windows, Grid 4.25.0, Chrome/Firefox, Allure и xdist.
 Запускайте команды из корня проекта в PowerShell.
@@ -89,7 +89,7 @@ allure open allure-report --host 127.0.0.1 --port 8765
 
 ## Git
 
-Репозиторий локальный, GitHub не требуется. Установка Git: https://git-scm.com/downloads/win.
+Установка Git: https://git-scm.com/downloads/win.
 
 ```powershell
 git status
@@ -98,7 +98,7 @@ git commit -m "Update UI tests"
 git log --oneline
 ```
 
-.venv, .env и результаты исключены. Проект не публиковался.
+.venv, .env и результаты исключены.
 
 ## Частые ошибки
 
@@ -124,5 +124,3 @@ git log --oneline
 ```
 
 Дополнение к диагностике: performance-логи содержат тип события, HTTP-метод, статус, MIME-тип, origin и размер, когда эти поля доступны. Тела, заголовки, пути и query не записываются. Текст произвольных сообщений консоли исключён. Старые отчёты до исправления декораторов могли содержать сгенерированные тестовые пароли; используйте новые каталоги `revision-*` для проверки исправленной версии.
-#   w e b _ t e s t s  
- 
