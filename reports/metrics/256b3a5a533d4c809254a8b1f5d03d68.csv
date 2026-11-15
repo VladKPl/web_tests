@@ -1,4 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:40:57.423991+00:00,tests/test_security.py::test_password_field,firefox,MainPage.open_main_page,4155.111,passed,main
-2026-11-14T19:40:59.333918+00:00,tests/test_security.py::test_password_field,firefox,MainPage.click_signup_login,1909.915,passed,main
-2026-11-14T19:41:00.111902+00:00,tests/test_security.py::test_password_field,firefox,LoginPage.signup_with_credentials,777.963,passed,main

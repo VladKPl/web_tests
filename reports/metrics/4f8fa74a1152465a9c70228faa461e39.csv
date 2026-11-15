@@ -1,8 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:56:52.768826+00:00,tests/test_auth.py::test_03_invalid_login,chrome,MainPage.open_main_page,5387.946,passed,gw1
-2026-11-14T19:56:54.682137+00:00,tests/test_auth.py::test_03_invalid_login,chrome,LoginPage.check_login_page_is_opened,74.968,passed,gw1
-2026-11-14T19:56:54.682168+00:00,tests/test_auth.py::test_03_invalid_login,chrome,MainPage.click_signup_login,1913.31,passed,gw1
-2026-11-14T19:56:56.259304+00:00,tests/test_auth.py::test_03_invalid_login,chrome,LoginPage.verify_login_error,25.513,passed,gw1
-2026-11-14T19:56:56.259320+00:00,tests/test_auth.py::test_03_invalid_login,chrome,LoginPage.login_with_credentials,1577.143,passed,gw1
-2026-11-14T19:56:56.279889+00:00,tests/test_auth.py::test_03_invalid_login,chrome,LoginPage.verify_login_error,20.571,passed,gw1
-2026-11-14T19:56:56.346362+00:00,tests/test_auth.py::test_03_invalid_login,chrome,LoginPage.check_login_page_is_opened,66.455,passed,gw1

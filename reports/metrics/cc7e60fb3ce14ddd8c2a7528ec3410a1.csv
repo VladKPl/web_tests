@@ -1,4 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-15T06:35:26.065698+00:00,tests/test_auth.py::test_04_logout,firefox,MainPage.verify_main_page_visible,67.321,passed,gw1
-2026-11-15T06:35:26.065737+00:00,tests/test_auth.py::test_04_logout,firefox,MainPage.open_main_page,25776.747,passed,gw1
-2026-11-15T06:35:26.120161+00:00,tests/test_auth.py::test_04_logout,firefox,MainPage.click_signup_login,54.421,failed,gw1

@@ -56,7 +56,7 @@ class MainPage(BasePage):
 
     @allure.step("Переход в раздел 'Products'")
     def click_products(self):
-        self.find_element(self.PRODUCTS_BUTTON).click()
+        self.click(self.PRODUCTS_BUTTON)
         from .ProductsPage import ProductsPage
         page = ProductsPage(self.driver, self.base_url)
         page.wait_for_element_visible(page.ITEMS)
@@ -64,12 +64,12 @@ class MainPage(BasePage):
 
     @allure.step("Нажатие 'View Product' у первого товара в списке")
     def click_first_view_product(self):
-        self.find_element(self.FIRST_VIEW_PRODUCT_BTN).click()
+        self.click(self.FIRST_VIEW_PRODUCT_BTN)
         from .ProductDetailPage import ProductDetailPage
         return ProductDetailPage(self.driver, self.base_url).verify_product_detail_opened()
 
     @allure.step("Переход в корзину через верхнее меню")
     def click_view_cart(self):
-        self.find_element(self.VIEW_CART).click()
+        self.click(self.VIEW_CART)
         from .CartPage import CartPage
         return CartPage(self.driver, self.base_url).verify_cart_page_displayed()

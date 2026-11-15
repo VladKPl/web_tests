@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException
+from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException, NoSuchElementException, StaleElementReferenceException, NoSuchFrameException
 
 def timed(method):
     @wraps(method)
@@ -23,6 +23,23 @@ class BasePage:
     CONSENT_MANAGE = (By.CSS_SELECTOR, '.fc-cta-manage-options')
     CONSENT_CONFIRM = (By.CSS_SELECTOR, '.fc-data-preferences-dialog .fc-confirm-choices')
     CONSENT_OVERLAY = (By.CSS_SELECTOR, '.fc-dialog-overlay')
+    AD_FRAMES = (By.TAG_NAME, 'iframe')
+    AD_CLOSE = (By.ID, 'dismiss-button')
+
+    def _dismiss_interstitial(self):
+        if '#google_vignette' not in self.driver.current_url:
+            return
+        for frame in self.driver.find_elements(*self.AD_FRAMES):
+            try:
+                self.driver.switch_to.frame(frame)
+                button = EC.element_to_be_clickable(self.AD_CLOSE)(self.driver)
+                if button:
+                    button.click()
+                    return
+            except (NoSuchElementException, StaleElementReferenceException, NoSuchFrameException):
+                continue
+            finally:
+                self.driver.switch_to.default_content()
 
     @allure.step('Закрытие диалога privacy с текущими настройками')
     def dismiss_consent(self, timeout=3):
@@ -55,28 +72,46 @@ class BasePage:
     @allure.step("Ожидаем видимость элемента с локатором: {locator}")
     def wait_for_element_visible(self, locator):
         """Ждет, пока элемент станет видимым на странице."""
+        def visible(driver):
+            self._dismiss_interstitial()
+            if any(element.is_displayed() for element in driver.find_elements(*self.CONSENT_OVERLAY)):
+                self.dismiss_consent()
+            return EC.visibility_of_element_located(locator)(driver)
         return WebDriverWait(self.driver, self.timeout).until(
-            EC.visibility_of_element_located(locator)
+            visible
         )
 
     @allure.step("Ожидаем кликабельность элемента с локатором: {locator}")
     def wait_for_element_clickable(self, locator):
         """Ждет, пока элемент станет кликабельным."""
+        def clickable(driver):
+            if locator not in (self.CONSENT_MANAGE, self.CONSENT_CONFIRM):
+                self._dismiss_interstitial()
+                if any(e.is_displayed() for e in driver.find_elements(*self.CONSENT_OVERLAY)):
+                    self.dismiss_consent()
+            return EC.element_to_be_clickable(locator)(driver)
         return WebDriverWait(self.driver, self.timeout).until(
-            EC.element_to_be_clickable(locator)
+            clickable
         )
 
     @allure.step("Клик по элементу с локатором: {locator}")
     def click(self, locator):
         """Кликает по элементу по локатору."""
-        element = self.wait_for_element_clickable(locator)
-        try:
-            element.click()
-        except ElementClickInterceptedException:
-            if not self.driver.find_elements(*self.CONSENT_OVERLAY):
-                raise
-            self.dismiss_consent()
-            self.wait_for_element_clickable(locator).click()
+        def press(driver):
+            try:
+                self._dismiss_interstitial()
+                if any(e.is_displayed() for e in driver.find_elements(*self.CONSENT_OVERLAY)):
+                    self.dismiss_consent()
+                element = EC.element_to_be_clickable(locator)(driver)
+                if not element:
+                    return False
+                driver.execute_script("arguments[0].scrollIntoView({block:'center'})", element)
+                ActionChains(driver).move_to_element(element).perform()
+                element.click()
+                return True
+            except (ElementClickInterceptedException, StaleElementReferenceException, NoSuchElementException):
+                return False
+        WebDriverWait(self.driver, self.timeout).until(press, message=f'Cannot click {locator}')
 
     def enter_text(self, locator, text):
         """Вводит текст в поле ввода по локатору."""
@@ -123,7 +158,7 @@ class BasePage:
         hover_element = hover_elements[index]
         
         actions.move_to_element(hover_element).perform()
-        self.find_element(click_locator).click()
+        self.click(click_locator)
     wait_for_element_present = find_element
 
     def get_element_text(self, locator):

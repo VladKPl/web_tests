@@ -89,6 +89,8 @@ allure open allure-report --host 127.0.0.1 --port 8765
 
 ## Git
 
+Репозиторий проекта: https://github.com/VladKPl/web_tests. Изменения подготавливаются локально; отправку на GitHub выполняет пользователь.
+
 Установка Git: https://git-scm.com/downloads/win.
 
 ```powershell
@@ -99,6 +101,8 @@ git log --oneline
 ```
 
 .venv, .env и результаты исключены.
+
+Метрики `reports/metrics/` также исключены из Git. Если локальная копия ранее отслеживала результаты или Allure CLI, удаление из индекса (`git rm --cached`) сохраняет файлы на диске. Эти изменения не очищают историю ранее опубликованных коммитов.
 
 ## Частые ошибки
 
@@ -111,16 +115,26 @@ git log --oneline
 - Allure не найден: Python-плагин не устанавливает Commandline; установите CLI отдельно.
 - Реклама или изменения DOM могут мешать взаимодействию; изучите скриншот и актуальную страницу. Тесты не скрывают элементы сайта для получения успешного результата.
 - Диалог privacy обрабатывается штатными кнопками Manage options → Confirm choices. Если его разметка изменилась, тест сохраняет ошибку вместо удаления overlay через JavaScript.
+- Полноэкранная реклама `#google_vignette` закрывается штатной кнопкой Close ad внутри iframe. Неподдерживаемое перекрытие остаётся диагностируемой ошибкой.
 
 См. docs/AUDIT.md и docs/STATUS.md для фактического состояния и ограничений.
 
 ## Локально подготовленный Allure CLI
 
-В этой рабочей копии CLI 2.32.0 установлен в `tools/allure-2.32.0` из официального GitHub-релиза allure-framework/allure2. Каталог исключён из Git. Если его нет в полученной копии, скачайте и распакуйте этот релиз из https://github.com/allure-framework/allure2/releases/tag/2.32.0.
+Allure CLI и архив установщика хранятся только локально и исключены из Git правилами `tools/allure-2.32.0/` и `tools/allure.zip`. После клонирования установите CLI из официального релиза:
 
 ```powershell
-.\tools\allure-2.32.0\bin\allure.bat generate allure-results/chrome-restored -o allure-report --clean
+New-Item -ItemType Directory -Force tools | Out-Null
+Invoke-WebRequest https://github.com/allure-framework/allure2/releases/download/2.32.0/allure-2.32.0.zip -OutFile tools/allure.zip
+Expand-Archive tools/allure.zip -DestinationPath tools -Force
+```
+
+```powershell
+.\tools\allure-2.32.0\bin\allure.bat generate allure-results/final-verified-chrome -o allure-report --clean
+.\tools\allure-2.32.0\bin\allure.bat generate allure-results/final-verified-firefox -o allure-report/firefox --clean
 .\tools\allure-2.32.0\bin\allure.bat open allure-report --host 127.0.0.1 --port 8765
 ```
 
-Дополнение к диагностике: performance-логи содержат тип события, HTTP-метод, статус, MIME-тип, origin и размер, когда эти поля доступны. Тела, заголовки, пути и query не записываются. Текст произвольных сообщений консоли исключён. Старые отчёты до исправления декораторов могли содержать сгенерированные тестовые пароли; используйте новые каталоги `revision-*` для проверки исправленной версии.
+Основной адрес показывает Chrome. Отчёт Firefox доступен по http://127.0.0.1:8765/firefox/ при том же запущенном сервере. Раздельные отчёты сохраняют результаты каждого браузера без объединения одинаковых тестов в повторные попытки.
+
+Performance-логи содержат тип события, HTTP-метод, статус, MIME-тип, origin и размер, когда эти поля доступны. Тела, заголовки, пути и query не записываются. Текст произвольных сообщений консоли исключён. Старые отчёты до исправления декораторов могли содержать сгенерированные тестовые пароли. Результаты текущего аудита и команды генерации отчёта указаны в [docs/FINAL_AUDIT.md](docs/FINAL_AUDIT.md).

@@ -1,6 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T20:02:39.329645+00:00,tests/test_smoke.py::test_home_and_login,chrome,MainPage.open_main_page,6254.079,passed,main
-2026-11-14T20:02:39.347986+00:00,tests/test_smoke.py::test_home_and_login,chrome,MainPage.verify_main_page_visible,18.32,passed,main
-2026-11-14T20:02:41.124465+00:00,tests/test_smoke.py::test_home_and_login,chrome,LoginPage.check_login_page_is_opened,28.628,passed,main
-2026-11-14T20:02:41.124490+00:00,tests/test_smoke.py::test_home_and_login,chrome,MainPage.click_signup_login,1776.483,passed,main
-2026-11-14T20:02:41.145518+00:00,tests/test_smoke.py::test_home_and_login,chrome,LoginPage.check_login_page_is_opened,21.026,passed,main

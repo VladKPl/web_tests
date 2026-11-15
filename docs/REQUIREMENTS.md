@@ -10,7 +10,7 @@
 | Конфигурация и приоритет CLI | src/config/settings.py, conftest.py | --browser, --url, --grid-url, --mode, --local, --remote; конфликт local/remote отклоняется |
 | function-scoped WebDriver, quit, implicit=0 | conftest.py | Все UI-тесты; local smoke Chrome/Firefox проверены ранее |
 | Задание 2: маркеры, логирование, xdist | pytest.ini, conftest.py | Групповые прогоны и финальный параллельный прогон |
-| Задания 3 и 5: BasePage и наследование | src/pages/*.py | Все страницы наследуют BasePage прямо или через другой Page Object |
+| Задания 3 и 5: BasePage и наследование | src/pages/*.py | Все страницы непосредственно наследуют BasePage; общие modal/table операции в components.py |
 | find/find_all, presence/visible/clickable | BasePage | Используются UI-сценариями |
 | click, input, text, attributes, scroll, hover | BasePage | Используются страницами; значения ввода не декорируются Allure |
 | script, current URL, URL wait | BasePage | Валидация форм и переходы |

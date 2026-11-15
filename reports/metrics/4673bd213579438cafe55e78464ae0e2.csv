@@ -1,2 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:45:02.045618+00:00,tests/test_auth.py::test_05_duplicate,chrome,MainPage.open_main_page,60038.241,failed,main

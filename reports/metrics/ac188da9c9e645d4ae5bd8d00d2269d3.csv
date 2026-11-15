@@ -1,7 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-15T06:43:02.644846+00:00,tests/test_auth.py::test_04_logout,firefox,MainPage.verify_main_page_visible,21.932,passed,gw1
-2026-11-15T06:43:02.644884+00:00,tests/test_auth.py::test_04_logout,firefox,MainPage.open_main_page,23100.849,passed,gw1
-2026-11-15T06:43:05.140794+00:00,tests/test_auth.py::test_04_logout,firefox,LoginPage.check_login_page_is_opened,51.46,passed,gw1
-2026-11-15T06:43:05.140828+00:00,tests/test_auth.py::test_04_logout,firefox,MainPage.click_signup_login,2495.935,passed,gw1
-2026-11-15T06:43:30.867345+00:00,tests/test_auth.py::test_04_logout,firefox,LoginPage.signup_with_credentials,25726.507,passed,gw1
-2026-11-15T06:43:31.467179+00:00,tests/test_auth.py::test_04_logout,firefox,SignupPage.register_user,599.823,failed,gw1

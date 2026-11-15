@@ -11,3 +11,5 @@ reports/logs/
 reports/screenshots/
 tools/allure-2.32.0/
 tools/allure.zip
+reports/metrics/
+tools/clean-venv/

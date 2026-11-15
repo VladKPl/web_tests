@@ -1,6 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:51:50.252185+00:00,tests/test_security.py::test_name_roundtrip[Anne O'Neil-Smith],chrome,MainPage.open_main_page,5351.975,passed,main
-2026-11-14T19:51:52.165230+00:00,tests/test_security.py::test_name_roundtrip[Anne O'Neil-Smith],chrome,LoginPage.check_login_page_is_opened,71.968,passed,main
-2026-11-14T19:51:52.165260+00:00,tests/test_security.py::test_name_roundtrip[Anne O'Neil-Smith],chrome,MainPage.click_signup_login,1913.05,passed,main
-2026-11-14T19:51:54.060997+00:00,tests/test_security.py::test_name_roundtrip[Anne O'Neil-Smith],chrome,LoginPage.signup_with_credentials,1895.734,passed,main
-2026-11-14T19:51:54.080673+00:00,tests/test_security.py::test_name_roundtrip[Anne O'Neil-Smith],chrome,SignupPage.verify_name,19.663,passed,main

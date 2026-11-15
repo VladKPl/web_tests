@@ -1,6 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:46:21.993296+00:00,tests/test_security.py::test_name_roundtrip[A],firefox,MainPage.open_main_page,4432.571,passed,main
-2026-11-14T19:46:24.488752+00:00,tests/test_security.py::test_name_roundtrip[A],firefox,LoginPage.check_login_page_is_opened,46.93,passed,main
-2026-11-14T19:46:24.488780+00:00,tests/test_security.py::test_name_roundtrip[A],firefox,MainPage.click_signup_login,2495.461,passed,main
-2026-11-14T19:46:25.383985+00:00,tests/test_security.py::test_name_roundtrip[A],firefox,LoginPage.signup_with_credentials,895.202,passed,main
-2026-11-14T19:46:25.396159+00:00,tests/test_security.py::test_name_roundtrip[A],firefox,SignupPage.verify_name,12.155,passed,main

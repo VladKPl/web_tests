@@ -1,9 +1,10 @@
 import allure
 from selenium.webdriver.common.by import By
-from .ProductsPage import ProductsPage
+from .BasePage import BasePage
+from .components import CartModalMixin
 
 
-class ProductDetailPage(ProductsPage):
+class ProductDetailPage(BasePage, CartModalMixin):
     INFO = (By.CSS_SELECTOR, '.product-information')
     QUANTITY = (By.ID, 'quantity')
     ADD_BUTTON = (By.CSS_SELECTOR, 'button.cart')

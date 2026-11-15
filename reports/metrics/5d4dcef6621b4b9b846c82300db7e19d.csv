@@ -1,9 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:49:47.062992+00:00,tests/test_cart_order.py::test_13_quantity,chrome,MainPage.open_main_page,5558.483,passed,main
-2026-11-14T19:49:49.953156+00:00,tests/test_cart_order.py::test_13_quantity,chrome,MainPage.click_first_view_product,2890.151,passed,main
-2026-11-14T19:49:49.977380+00:00,tests/test_cart_order.py::test_13_quantity,chrome,ProductDetailPage.verify_product_detail_opened,24.207,passed,main
-2026-11-14T19:49:50.080973+00:00,tests/test_cart_order.py::test_13_quantity,chrome,ProductDetailPage.set_quantity,103.575,passed,main
-2026-11-14T19:49:50.718697+00:00,tests/test_cart_order.py::test_13_quantity,chrome,ProductDetailPage.add_to_cart,637.709,passed,main
-2026-11-14T19:49:52.013292+00:00,tests/test_cart_order.py::test_13_quantity,chrome,CartPage.verify_cart_page_displayed,23.384,passed,main
-2026-11-14T19:49:52.013318+00:00,tests/test_cart_order.py::test_13_quantity,chrome,ProductDetailPage.click_view_cart,1294.599,passed,main
-2026-11-14T19:49:52.116433+00:00,tests/test_cart_order.py::test_13_quantity,chrome,CartPage.items,103.117,passed,main

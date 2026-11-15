@@ -1,4 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:59:39.275632+00:00,tests/test_cart_order.py::test_order[TC14],firefox,MainPage.open_main_page,4605.826,passed,main
-2026-11-14T19:59:42.222471+00:00,tests/test_cart_order.py::test_order[TC14],firefox,MainPage.click_products,2946.81,passed,main
-2026-11-14T19:59:42.521083+00:00,tests/test_cart_order.py::test_order[TC14],firefox,ProductsPage.add_product,298.591,failed,main

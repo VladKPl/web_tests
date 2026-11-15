@@ -1,3 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:52:35.431182+00:00,tests/test_subscription.py::test_10_home,chrome,MainPage.open_main_page,5503.822,passed,main
-2026-11-14T19:52:35.453979+00:00,tests/test_subscription.py::test_10_home,chrome,MainPage.verify_main_page_visible,22.782,passed,main

@@ -1,9 +1,11 @@
 import allure
 from selenium.webdriver.common.by import By
-from .CartPage import CartPage
+from .BasePage import BasePage
+from .components import CartTableMixin
 
 
-class CheckoutPage(CartPage):
+class CheckoutPage(BasePage, CartTableMixin):
+    REVIEW = (By.XPATH, "//h2[normalize-space()='Review Your Order']")
     DELIVERY = (By.ID, 'address_delivery')
     INVOICE = (By.ID, 'address_invoice')
     COMMENT = (By.NAME, 'message')
@@ -11,6 +13,7 @@ class CheckoutPage(CartPage):
 
     @allure.step('Проверка адресов и заказа')
     def verify_address_and_order(self):
+        assert self.get_element_text(self.REVIEW) == 'Review Your Order'
         for locator in (self.DELIVERY, self.INVOICE):
             text = self.get_element_text(locator)
             for value in ('Mr. Ivan Ivanov', 'QA', 'Main St 10', 'Suite 2', 'Toronto Ontario', '12345', 'Canada', '1234567'):

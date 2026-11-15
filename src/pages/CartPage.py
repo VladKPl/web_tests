@@ -1,15 +1,11 @@
 import allure
 from selenium.webdriver.common.by import By
 from .BasePage import BasePage
+from .components import CartTableMixin
 
 
-class CartPage(BasePage):
+class CartPage(BasePage, CartTableMixin):
     INFO = (By.ID, 'cart_info')
-    ROWS = (By.CSS_SELECTOR, 'tr[id^="product-"]')
-    NAME = (By.CSS_SELECTOR, '.cart_description h4')
-    PRICE = (By.CSS_SELECTOR, '.cart_price p')
-    QUANTITY = (By.CSS_SELECTOR, '.cart_quantity button')
-    TOTAL = (By.CSS_SELECTOR, '.cart_total_price')
     CHECKOUT = (By.CSS_SELECTOR, '.check_out')
     REGISTER = (By.CSS_SELECTOR, '#checkoutModal a[href="/login"]')
     DELETE = (By.CSS_SELECTOR, '.cart_quantity_delete')
@@ -20,7 +16,7 @@ class CartPage(BasePage):
         from selenium.webdriver.support.ui import WebDriverWait
         from selenium.webdriver.support import expected_conditions as EC
         row = self.find_elements(self.ROWS)[index]
-        row.find_element(*self.DELETE).click()
+        self.click((By.CSS_SELECTOR, "#" + row.get_attribute("id") + " .cart_quantity_delete"))
         WebDriverWait(self.driver, self.timeout).until(EC.staleness_of(row))
         return self
 
@@ -49,13 +45,3 @@ class CartPage(BasePage):
     def verify_cart_page_displayed(self):
         self.wait_for_element_visible(self.INFO)
         return self
-
-    @allure.step('Получение содержимого корзины')
-    def items(self):
-        def money(text):
-            return int(text.replace('Rs.', '').strip())
-        return [dict(name=e.find_element(*self.NAME).text,
-                     price=money(e.find_element(*self.PRICE).text),
-                     quantity=int(e.find_element(*self.QUANTITY).text),
-                     total=money(e.find_element(*self.TOTAL).text))
-                for e in self.find_elements(self.ROWS)]

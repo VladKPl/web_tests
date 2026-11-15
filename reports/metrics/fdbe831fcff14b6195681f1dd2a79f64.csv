@@ -1,2 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:45:05.975085+00:00,tests/test_security.py::test_registration_validation[-qa@example.com],chrome,MainPage.open_main_page,165.474,failed,main

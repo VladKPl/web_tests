@@ -1,6 +1,0 @@
-timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
-2026-11-14T19:51:20.638417+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],firefox,MainPage.open_main_page,3783.56,passed,main
-2026-11-14T19:51:22.531182+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],firefox,LoginPage.check_login_page_is_opened,38.71,passed,main
-2026-11-14T19:51:22.531209+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],firefox,MainPage.click_signup_login,1892.767,passed,main
-2026-11-14T19:51:22.879983+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],firefox,LoginPage.check_login_page_is_opened,40.83,passed,main
-2026-11-14T19:51:22.880010+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],firefox,LoginPage.verify_invalid_signup,348.793,passed,main
