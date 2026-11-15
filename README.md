@@ -54,9 +54,9 @@ python -m pytest -m smoke
 
 ```powershell
 python -m pytest --alluredir=allure-results
-allure serve allure-results
+allure serve allure-results --host 127.0.0.1 --port 8765
 allure generate allure-results -o allure-report --clean
-allure open allure-report
+allure open allure-report --host 127.0.0.1 --port 8765
 ```
 
 Для отдельных прогонов указывайте отдельный каталог, например `--alluredir=allure-results/chrome-final`, чтобы старые результаты не смешивались.
@@ -113,7 +113,7 @@ git log --oneline
 
 ```powershell
 .\tools\allure-2.32.0\bin\allure.bat generate allure-results/chrome-restored -o allure-report --clean
-.\tools\allure-2.32.0\bin\allure.bat open allure-report
+.\tools\allure-2.32.0\bin\allure.bat open allure-report --host 127.0.0.1 --port 8765
 ```
 
 Дополнение к диагностике: performance-логи содержат тип события, HTTP-метод, статус, MIME-тип, origin и размер, когда эти поля доступны. Тела, заголовки, пути и query не записываются. Текст произвольных сообщений консоли исключён. Старые отчёты до исправления декораторов могли содержать сгенерированные тестовые пароли; используйте новые каталоги `revision-*` для проверки исправленной версии.
