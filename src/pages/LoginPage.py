@@ -33,7 +33,7 @@ class LoginPage(BasePage):
     @allure.step("Проверка страницы логина/регистрации")
     def check_login_page_is_opened(self):
         """Проверяет, что страница логина/регистрации открылась."""
-        assert "login" in self.get_current_url(), "URL не соответствует странице логина"
+        self.wait_for_url_contains('/login')
         assert self.wait_for_element_visible(self.LOGIN_HEADER).is_displayed(), "Форма логина не найдена"
         assert self.wait_for_element_visible(self.SIGNUP_HEADER).is_displayed(), "Форма регистрации не найдена"
         return self

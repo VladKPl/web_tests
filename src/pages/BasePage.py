@@ -7,6 +7,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException
 
 def timed(method):
     @wraps(method)
@@ -18,6 +20,20 @@ def timed(method):
 
 
 class BasePage:
+    CONSENT_MANAGE = (By.CSS_SELECTOR, '.fc-cta-manage-options')
+    CONSENT_CONFIRM = (By.CSS_SELECTOR, '.fc-data-preferences-dialog .fc-confirm-choices')
+    CONSENT_OVERLAY = (By.CSS_SELECTOR, '.fc-dialog-overlay')
+
+    @allure.step('Закрытие диалога privacy с текущими настройками')
+    def dismiss_consent(self, timeout=3):
+        try:
+            button = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(self.CONSENT_MANAGE))
+        except TimeoutException:
+            return self
+        button.click()
+        self.wait_for_element_clickable(self.CONSENT_CONFIRM).click()
+        WebDriverWait(self.driver, self.timeout).until(EC.invisibility_of_element_located(self.CONSENT_OVERLAY))
+        return self
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
         for name, method in list(cls.__dict__.items()):
@@ -33,6 +49,7 @@ class BasePage:
     def open(self, relative_url=""):
         """Открывает страницу по относительному или полному URL."""
         self.driver.get(urljoin(self.base_url + "/", relative_url))
+        self.dismiss_consent()
         return self
 
     @allure.step("Ожидаем видимость элемента с локатором: {locator}")
@@ -53,7 +70,13 @@ class BasePage:
     def click(self, locator):
         """Кликает по элементу по локатору."""
         element = self.wait_for_element_clickable(locator)
-        element.click()
+        try:
+            element.click()
+        except ElementClickInterceptedException:
+            if not self.driver.find_elements(*self.CONSENT_OVERLAY):
+                raise
+            self.dismiss_consent()
+            self.wait_for_element_clickable(locator).click()
 
     def enter_text(self, locator, text):
         """Вводит текст в поле ввода по локатору."""
@@ -70,6 +93,7 @@ class BasePage:
     def select_by_value(self, locator, value):
         """Выбирает опцию в выпадающем списке по значению (value)."""
         element = self.wait_for_element_visible(locator)
+        self.driver.execute_script("arguments[0].scrollIntoView({block:'center'})", element)
         select_element = Select(element)
         select_element.select_by_value(str(value))
         return self

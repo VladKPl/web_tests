@@ -1,0 +1,2 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:45:08.921503+00:00,tests/test_security.py::test_password_field,chrome,MainPage.open_main_page,178.575,failed,main

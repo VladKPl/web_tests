@@ -1,0 +1,9 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:49:44.582843+00:00,tests/test_cart_order.py::test_13_quantity,firefox,MainPage.open_main_page,4211.747,passed,main
+2026-11-14T19:49:47.284432+00:00,tests/test_cart_order.py::test_13_quantity,firefox,MainPage.click_first_view_product,2701.564,passed,main
+2026-11-14T19:49:47.301028+00:00,tests/test_cart_order.py::test_13_quantity,firefox,ProductDetailPage.verify_product_detail_opened,16.589,passed,main
+2026-11-14T19:49:47.342439+00:00,tests/test_cart_order.py::test_13_quantity,firefox,ProductDetailPage.set_quantity,41.387,passed,main
+2026-11-14T19:49:48.107243+00:00,tests/test_cart_order.py::test_13_quantity,firefox,ProductDetailPage.add_to_cart,764.79,passed,main
+2026-11-14T19:49:49.520906+00:00,tests/test_cart_order.py::test_13_quantity,firefox,CartPage.verify_cart_page_displayed,13.756,passed,main
+2026-11-14T19:49:49.520932+00:00,tests/test_cart_order.py::test_13_quantity,firefox,ProductDetailPage.click_view_cart,1413.67,passed,main
+2026-11-14T19:49:49.569911+00:00,tests/test_cart_order.py::test_13_quantity,firefox,CartPage.items,48.977,passed,main

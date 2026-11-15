@@ -1,0 +1,3 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:52:31.049130+00:00,tests/test_subscription.py::test_10_home,firefox,MainPage.open_main_page,7561.411,passed,main
+2026-11-14T19:52:31.071889+00:00,tests/test_subscription.py::test_10_home,firefox,MainPage.verify_main_page_visible,22.744,passed,main

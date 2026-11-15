@@ -10,7 +10,7 @@ class AccountCreatedPage(BasePage):
     @allure.step("Проверка отображения сообщения об успешном создании аккаунта")
     def verify_created_msg(self):
         """Проверяет видимость и возвращает текст сообщения."""
-        assert self.wait_for_element_visible(self.HEADER).is_displayed(), "Сообщение о создании аккаунта не найдено"
+        assert self.get_element_text(self.HEADER) == 'ACCOUNT CREATED!'
         return self
 
     @allure.step("Нажимаем кнопку 'Continue' на странице успешной регистрации")
@@ -18,4 +18,4 @@ class AccountCreatedPage(BasePage):
         """Кликает по кнопке продолжения и возвращает экземпляр главной страницы."""
         self.click(self.CONTINUE_BTN)
         from .MainPage import MainPage
-        return MainPage(self.driver, self.base_url)
+        return MainPage(self.driver, self.base_url).verify_main_page_visible()

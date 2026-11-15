@@ -1,0 +1,5 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-15T06:45:31.211468+00:00,tests/test_auth.py::test_02_login,firefox,MainPage.verify_main_page_visible,9.667,passed,main
+2026-11-15T06:45:31.211495+00:00,tests/test_auth.py::test_02_login,firefox,MainPage.open_main_page,11343.192,passed,main
+2026-11-15T06:45:36.290040+00:00,tests/test_auth.py::test_02_login,firefox,LoginPage.check_login_page_is_opened,1.611,failed,main
+2026-11-15T06:45:36.290653+00:00,tests/test_auth.py::test_02_login,firefox,MainPage.click_signup_login,5079.152,failed,main

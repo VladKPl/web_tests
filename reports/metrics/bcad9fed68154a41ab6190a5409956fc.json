@@ -1,0 +1,110 @@
+[
+  {
+    "timestamp": "2026-11-14T19:42:27.130335+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 6729.856,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:29.504887+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 2374.526,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:31.088259+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "LoginPage.signup_with_credentials",
+    "elapsed_ms": 1583.356,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:35.102174+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "AccountCreatedPage.verify_created_msg",
+    "elapsed_ms": 28.859,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:35.102199+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "SignupPage.register_user",
+    "elapsed_ms": 4013.923,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:37.310199+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "AccountCreatedPage.click_continue",
+    "elapsed_ms": 2208.0,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:37.331939+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "MainPage.verify_logged_in_as",
+    "elapsed_ms": 21.724,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:37.348979+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "MainPage.verify_logged_in_as",
+    "elapsed_ms": 16.55,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:39.969237+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 2589.741,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:41.271073+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "MainPage.click_delete_account",
+    "elapsed_ms": 1290.376,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:41.303642+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "AccountDeletedPage.verify_deleted_msg",
+    "elapsed_ms": 32.552,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:42:43.568567+00:00",
+    "test_name": "tests/test_auth.py::test_01_register",
+    "browser": "chrome",
+    "operation": "AccountDeletedPage.click_continue",
+    "elapsed_ms": 2264.912,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

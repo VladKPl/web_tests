@@ -1,0 +1,6 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:51:18.575387+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],chrome,MainPage.open_main_page,5463.863,passed,main
+2026-11-14T19:51:20.514460+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],chrome,LoginPage.check_login_page_is_opened,68.257,passed,main
+2026-11-14T19:51:20.514490+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],chrome,MainPage.click_signup_login,1939.079,passed,main
+2026-11-14T19:51:20.880974+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],chrome,LoginPage.check_login_page_is_opened,65.943,passed,main
+2026-11-14T19:51:20.881005+00:00,tests/test_security.py::test_registration_validation[QA-testexample.com],chrome,LoginPage.verify_invalid_signup,366.508,passed,main

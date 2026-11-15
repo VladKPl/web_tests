@@ -15,6 +15,19 @@ class ProductsPage(BasePage):
     CONTINUE = (By.CSS_SELECTOR, '#cartModal .close-modal')
     MODAL = (By.ID, 'cartModal')
     CART = (By.CSS_SELECTOR, '#cartModal a[href="/view_cart"]')
+    DETAILS = (By.CSS_SELECTOR, '.choose a[href^="/product_details/"]')
+
+    @allure.step('Открытие каталога')
+    def open_catalog(self):
+        self.open('/products')
+        self.wait_for_element_visible(self.ITEMS)
+        return self
+
+    @allure.step('Открытие карточки товара')
+    def open_product(self, index=0):
+        self.find_elements(self.DETAILS)[index].click()
+        from .ProductDetailPage import ProductDetailPage
+        return ProductDetailPage(self.driver, self.base_url).verify_product_detail_opened()
 
     @allure.step('Получение данных каталога')
     def products(self):

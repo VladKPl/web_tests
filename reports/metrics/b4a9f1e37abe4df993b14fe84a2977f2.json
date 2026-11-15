@@ -1,0 +1,101 @@
+[
+  {
+    "timestamp": "2026-11-15T06:49:55.980837+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "MainPage.verify_main_page_visible",
+    "elapsed_ms": 35.424,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:49:55.980865+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 17358.466,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:49:56.008542+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "MainPage.verify_main_page_visible",
+    "elapsed_ms": 27.676,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:49:59.258527+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "MainPage.click_products",
+    "elapsed_ms": 3249.97,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:50:00.528747+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "ProductsPage.products",
+    "elapsed_ms": 1270.199,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:50:04.039218+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "ProductsPage.add_product",
+    "elapsed_ms": 3510.441,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:50:04.125044+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "ProductsPage.click_continue_shopping",
+    "elapsed_ms": 85.813,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:50:06.568594+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "ProductsPage.add_product",
+    "elapsed_ms": 2443.533,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:50:08.809191+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "CartPage.verify_cart_page_displayed",
+    "elapsed_ms": 22.153,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:50:08.809217+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "ProductsPage.click_view_cart",
+    "elapsed_ms": 2240.601,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-15T06:50:08.986335+00:00",
+    "test_name": "tests/test_cart_order.py::test_12_products",
+    "browser": "chrome",
+    "operation": "CartPage.items",
+    "elapsed_ms": 177.117,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

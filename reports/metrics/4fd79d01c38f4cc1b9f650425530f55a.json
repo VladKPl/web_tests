@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-11-14T19:59:40.680976+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 5500.655,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:59:42.025374+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "chrome",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 66.796,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:59:42.025402+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "chrome",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 1344.407,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:59:43.531741+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "chrome",
+    "operation": "LoginPage.signup_with_credentials",
+    "elapsed_ms": 1506.335,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:59:44.033659+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "chrome",
+    "operation": "SignupPage.verify_required_fields",
+    "elapsed_ms": 460.367,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

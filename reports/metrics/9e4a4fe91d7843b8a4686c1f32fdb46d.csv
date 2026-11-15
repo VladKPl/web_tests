@@ -1,0 +1,14 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:47:19.903202+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.open_main_page,5230.307,passed,main
+2026-11-14T19:47:21.797393+00:00,tests/test_auth.py::test_01_register,chrome,LoginPage.check_login_page_is_opened,63.694,passed,main
+2026-11-14T19:47:21.797422+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.click_signup_login,1894.181,passed,main
+2026-11-14T19:47:23.356032+00:00,tests/test_auth.py::test_01_register,chrome,LoginPage.signup_with_credentials,1558.609,passed,main
+2026-11-14T19:47:27.238258+00:00,tests/test_auth.py::test_01_register,chrome,AccountCreatedPage.verify_created_msg,29.666,passed,main
+2026-11-14T19:47:27.238286+00:00,tests/test_auth.py::test_01_register,chrome,SignupPage.register_user,3882.231,passed,main
+2026-11-14T19:47:31.023565+00:00,tests/test_auth.py::test_01_register,chrome,AccountCreatedPage.click_continue,3785.275,passed,main
+2026-11-14T19:47:31.045912+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.verify_logged_in_as,22.334,passed,main
+2026-11-14T19:47:31.064947+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.verify_logged_in_as,18.547,passed,main
+2026-11-14T19:47:34.000921+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.open_main_page,2901.27,passed,main
+2026-11-14T19:47:34.733148+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.click_delete_account,712.621,passed,main
+2026-11-14T19:47:34.766119+00:00,tests/test_auth.py::test_01_register,chrome,AccountDeletedPage.verify_deleted_msg,32.958,passed,main
+2026-11-14T19:47:37.421562+00:00,tests/test_auth.py::test_01_register,chrome,AccountDeletedPage.click_continue,2655.429,passed,main

@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-11-14T19:42:59.332781+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[-qa@example.com]",
+    "browser": "firefox",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 4150.967,
+    "status": "passed",
+    "worker_id": "gw0"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:01.166144+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[-qa@example.com]",
+    "browser": "firefox",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 46.556,
+    "status": "passed",
+    "worker_id": "gw0"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:01.166172+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[-qa@example.com]",
+    "browser": "firefox",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 1833.354,
+    "status": "passed",
+    "worker_id": "gw0"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:01.527620+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[-qa@example.com]",
+    "browser": "firefox",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 44.042,
+    "status": "passed",
+    "worker_id": "gw0"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:01.527648+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[-qa@example.com]",
+    "browser": "firefox",
+    "operation": "LoginPage.verify_invalid_signup",
+    "elapsed_ms": 361.468,
+    "status": "passed",
+    "worker_id": "gw0"
+  }
+]

@@ -1,0 +1,2 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:45:03.645835+00:00,tests/test_cart_order.py::test_13_quantity,chrome,MainPage.open_main_page,170.002,failed,main

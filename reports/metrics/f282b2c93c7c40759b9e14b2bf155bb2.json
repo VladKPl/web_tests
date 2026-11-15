@@ -1,0 +1,200 @@
+[
+  {
+    "timestamp": "2026-11-14T19:57:53.936490+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 4534.395,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:57:55.865487+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 44.898,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:57:55.865515+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 1928.992,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:57:56.653281+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "LoginPage.signup_with_credentials",
+    "elapsed_ms": 787.764,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:57:59.982302+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "AccountCreatedPage.verify_created_msg",
+    "elapsed_ms": 37.965,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:57:59.982330+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "SignupPage.register_user",
+    "elapsed_ms": 3329.027,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:03.060576+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "AccountCreatedPage.click_continue",
+    "elapsed_ms": 3078.244,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:03.080091+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "MainPage.verify_logged_in_as",
+    "elapsed_ms": 19.498,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:06.281471+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "MainPage.click_products",
+    "elapsed_ms": 3201.366,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:07.344575+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "ProductsPage.add_product",
+    "elapsed_ms": 1063.091,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:08.890749+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "CartPage.verify_cart_page_displayed",
+    "elapsed_ms": 21.602,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:08.890775+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "ProductsPage.click_view_cart",
+    "elapsed_ms": 1546.178,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:08.937336+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "CartPage.items",
+    "elapsed_ms": 46.558,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:09.936703+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "CheckoutPage.items",
+    "elapsed_ms": 44.897,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:09.936733+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "CheckoutPage.verify_address_and_order",
+    "elapsed_ms": 99.915,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:09.936744+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "CartPage.checkout",
+    "elapsed_ms": 999.388,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:09.996948+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "CheckoutPage.items",
+    "elapsed_ms": 60.204,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:10.760623+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "CheckoutPage.place_order",
+    "elapsed_ms": 763.655,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:13.553788+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "PaymentPage.pay",
+    "elapsed_ms": 2793.151,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:14.695925+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "MainPage.click_delete_account",
+    "elapsed_ms": 1142.122,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:14.716732+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "AccountDeletedPage.verify_deleted_msg",
+    "elapsed_ms": 20.766,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:58:17.374848+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC15]",
+    "browser": "firefox",
+    "operation": "AccountDeletedPage.click_continue",
+    "elapsed_ms": 2658.092,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

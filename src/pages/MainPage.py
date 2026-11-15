@@ -23,7 +23,7 @@ class MainPage(BasePage):
     def open_main_page(self):
         """Открывает главную страницу в браузере."""
         self.open("/")
-        return self
+        return self.verify_main_page_visible()
 
     @allure.step("Клик по кнопке Signup / Login в верхнем меню")
     def click_signup_login(self):
@@ -41,17 +41,17 @@ class MainPage(BasePage):
     def click_delete_account(self):
         self.click(self.DELETE_ACCOUNT)
         from .AccountDeletedPage import AccountDeletedPage
-        return AccountDeletedPage(self.driver, self.base_url)
+        return AccountDeletedPage(self.driver, self.base_url).verify_deleted_msg()
 
     @allure.step("Выход из системы (Logout)")
     def click_logout(self):
         self.click(self.LOGOUT)
         from .LoginPage import LoginPage
-        return LoginPage(self.driver, self.base_url)
+        return LoginPage(self.driver, self.base_url).check_login_page_is_opened()
 
     @allure.step("Проверка отображения главной страницы")
     def verify_main_page_visible(self):
-        assert self.find_element(self.SLIDER).is_displayed(), "Главная страница не отображается"
+        assert self.wait_for_element_visible(self.SLIDER).is_displayed(), "Главная страница не отображается"
         return self
 
     @allure.step("Переход в раздел 'Products'")
@@ -66,10 +66,10 @@ class MainPage(BasePage):
     def click_first_view_product(self):
         self.find_element(self.FIRST_VIEW_PRODUCT_BTN).click()
         from .ProductDetailPage import ProductDetailPage
-        return ProductDetailPage(self.driver, self.base_url)
+        return ProductDetailPage(self.driver, self.base_url).verify_product_detail_opened()
 
     @allure.step("Переход в корзину через верхнее меню")
     def click_view_cart(self):
         self.find_element(self.VIEW_CART).click()
         from .CartPage import CartPage
-        return CartPage(self.driver, self.base_url)
+        return CartPage(self.driver, self.base_url).verify_cart_page_displayed()

@@ -1,0 +1,56 @@
+[
+  {
+    "timestamp": "2026-11-15T06:43:02.644846+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "MainPage.verify_main_page_visible",
+    "elapsed_ms": 21.932,
+    "status": "passed",
+    "worker_id": "gw1"
+  },
+  {
+    "timestamp": "2026-11-15T06:43:02.644884+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 23100.849,
+    "status": "passed",
+    "worker_id": "gw1"
+  },
+  {
+    "timestamp": "2026-11-15T06:43:05.140794+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 51.46,
+    "status": "passed",
+    "worker_id": "gw1"
+  },
+  {
+    "timestamp": "2026-11-15T06:43:05.140828+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 2495.935,
+    "status": "passed",
+    "worker_id": "gw1"
+  },
+  {
+    "timestamp": "2026-11-15T06:43:30.867345+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "LoginPage.signup_with_credentials",
+    "elapsed_ms": 25726.507,
+    "status": "passed",
+    "worker_id": "gw1"
+  },
+  {
+    "timestamp": "2026-11-15T06:43:31.467179+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "SignupPage.register_user",
+    "elapsed_ms": 599.823,
+    "status": "failed",
+    "worker_id": "gw1"
+  }
+]

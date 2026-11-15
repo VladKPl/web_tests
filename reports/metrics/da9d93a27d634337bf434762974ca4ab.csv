@@ -1,0 +1,6 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:59:59.264589+00:00,tests/test_security.py::test_name_roundtrip[A],chrome,MainPage.open_main_page,5507.566,passed,main
+2026-11-14T20:00:01.215111+00:00,tests/test_security.py::test_name_roundtrip[A],chrome,LoginPage.check_login_page_is_opened,74.305,passed,main
+2026-11-14T20:00:01.215152+00:00,tests/test_security.py::test_name_roundtrip[A],chrome,MainPage.click_signup_login,1950.544,passed,main
+2026-11-14T20:00:02.825085+00:00,tests/test_security.py::test_name_roundtrip[A],chrome,LoginPage.signup_with_credentials,1609.924,passed,main
+2026-11-14T20:00:02.846026+00:00,tests/test_security.py::test_name_roundtrip[A],chrome,SignupPage.verify_name,20.926,passed,main

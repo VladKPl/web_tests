@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": "2026-11-14T19:45:08.179924+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-test@]",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 187.578,
+    "status": "failed",
+    "worker_id": "main"
+  }
+]

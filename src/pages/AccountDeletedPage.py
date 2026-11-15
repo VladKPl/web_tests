@@ -10,7 +10,7 @@ class AccountDeletedPage(BasePage):
     @allure.step("Проверка отображения сообщения об успешном удалении аккаунта")
     def verify_deleted_msg(self):
         """Проверяет видимость и возвращает сообщение."""
-        assert self.wait_for_element_visible(self.HEADER).is_displayed(), "Сообщение об удалении аккаунта не найдено"
+        assert self.get_element_text(self.HEADER) == 'ACCOUNT DELETED!'
         self.driver.pending_account = None
         return self
 
@@ -19,4 +19,4 @@ class AccountDeletedPage(BasePage):
         """Кликает по кнопке продолжения и возвращает экземпляр главной страницы."""
         self.click(self.CONTINUE_BTN)
         from .MainPage import MainPage
-        return MainPage(self.driver, self.base_url)
+        return MainPage(self.driver, self.base_url).verify_main_page_visible()

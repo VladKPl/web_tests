@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2026-11-14T19:52:31.049130+00:00",
+    "test_name": "tests/test_subscription.py::test_10_home",
+    "browser": "firefox",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 7561.411,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:52:31.071889+00:00",
+    "test_name": "tests/test_subscription.py::test_10_home",
+    "browser": "firefox",
+    "operation": "MainPage.verify_main_page_visible",
+    "elapsed_ms": 22.744,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

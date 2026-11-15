@@ -1,0 +1,6 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:59:40.680976+00:00,tests/test_security.py::test_password_field,chrome,MainPage.open_main_page,5500.655,passed,main
+2026-11-14T19:59:42.025374+00:00,tests/test_security.py::test_password_field,chrome,LoginPage.check_login_page_is_opened,66.796,passed,main
+2026-11-14T19:59:42.025402+00:00,tests/test_security.py::test_password_field,chrome,MainPage.click_signup_login,1344.407,passed,main
+2026-11-14T19:59:43.531741+00:00,tests/test_security.py::test_password_field,chrome,LoginPage.signup_with_credentials,1506.335,passed,main
+2026-11-14T19:59:44.033659+00:00,tests/test_security.py::test_password_field,chrome,SignupPage.verify_required_fields,460.367,passed,main

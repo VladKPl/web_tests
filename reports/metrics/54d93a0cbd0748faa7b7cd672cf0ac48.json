@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2026-11-14T19:40:40.193550+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-testexample.com]",
+    "browser": "firefox",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 4550.726,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:40:41.883508+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-testexample.com]",
+    "browser": "firefox",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 1689.944,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:40:42.258780+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-testexample.com]",
+    "browser": "firefox",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 48.827,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:40:42.258811+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-testexample.com]",
+    "browser": "firefox",
+    "operation": "LoginPage.verify_invalid_signup",
+    "elapsed_ms": 375.284,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

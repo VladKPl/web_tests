@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": "2026-11-14T19:45:04.389407+00:00",
+    "test_name": "tests/test_cart_order.py::test_order[TC14]",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 181.013,
+    "status": "failed",
+    "worker_id": "main"
+  }
+]

@@ -1,0 +1,6 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:43:17.943563+00:00,tests/test_security.py::test_registration_validation[QA-],firefox,MainPage.open_main_page,4414.135,passed,gw0
+2026-11-14T19:43:20.446369+00:00,tests/test_security.py::test_registration_validation[QA-],firefox,LoginPage.check_login_page_is_opened,49.507,passed,gw0
+2026-11-14T19:43:20.446396+00:00,tests/test_security.py::test_registration_validation[QA-],firefox,MainPage.click_signup_login,2502.799,passed,gw0
+2026-11-14T19:43:20.817316+00:00,tests/test_security.py::test_registration_validation[QA-],firefox,LoginPage.check_login_page_is_opened,44.963,passed,gw0
+2026-11-14T19:43:20.817349+00:00,tests/test_security.py::test_registration_validation[QA-],firefox,LoginPage.verify_invalid_signup,370.947,passed,gw0

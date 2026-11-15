@@ -1,0 +1,14 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:47:31.078319+00:00,tests/test_auth.py::test_01_register,firefox,MainPage.open_main_page,4653.671,passed,main
+2026-11-14T19:47:33.422786+00:00,tests/test_auth.py::test_01_register,firefox,LoginPage.check_login_page_is_opened,46.241,passed,main
+2026-11-14T19:47:33.422820+00:00,tests/test_auth.py::test_01_register,firefox,MainPage.click_signup_login,2344.465,passed,main
+2026-11-14T19:47:34.335545+00:00,tests/test_auth.py::test_01_register,firefox,LoginPage.signup_with_credentials,912.719,passed,main
+2026-11-14T19:47:37.990031+00:00,tests/test_auth.py::test_01_register,firefox,AccountCreatedPage.verify_created_msg,41.153,passed,main
+2026-11-14T19:47:37.990059+00:00,tests/test_auth.py::test_01_register,firefox,SignupPage.register_user,3654.496,passed,main
+2026-11-14T19:47:40.334817+00:00,tests/test_auth.py::test_01_register,firefox,AccountCreatedPage.click_continue,2344.756,passed,main
+2026-11-14T19:47:40.354424+00:00,tests/test_auth.py::test_01_register,firefox,MainPage.verify_logged_in_as,19.592,passed,main
+2026-11-14T19:47:40.367654+00:00,tests/test_auth.py::test_01_register,firefox,MainPage.verify_logged_in_as,12.692,passed,main
+2026-11-14T19:47:42.714281+00:00,tests/test_auth.py::test_01_register,firefox,MainPage.open_main_page,2325.907,passed,main
+2026-11-14T19:47:43.341013+00:00,tests/test_auth.py::test_01_register,firefox,MainPage.click_delete_account,612.857,passed,main
+2026-11-14T19:47:43.368670+00:00,tests/test_auth.py::test_01_register,firefox,AccountDeletedPage.verify_deleted_msg,27.644,passed,main
+2026-11-14T19:47:45.924785+00:00,tests/test_auth.py::test_01_register,firefox,AccountDeletedPage.click_continue,2556.102,passed,main

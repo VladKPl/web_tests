@@ -1,0 +1,4 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-15T06:35:34.822891+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.verify_main_page_visible,57.176,passed,main
+2026-11-15T06:35:34.822925+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.open_main_page,46144.549,passed,main
+2026-11-15T06:35:35.943707+00:00,tests/test_auth.py::test_01_register,chrome,MainPage.click_signup_login,1120.781,failed,main

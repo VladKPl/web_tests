@@ -1,0 +1,2 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:45:09.644645+00:00,tests/test_smoke.py::test_home_and_login,chrome,MainPage.open_main_page,151.958,failed,main

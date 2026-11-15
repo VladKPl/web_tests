@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2026-11-14T19:43:40.251617+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "firefox",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 4208.856,
+    "status": "passed",
+    "worker_id": "gw0"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:42.174107+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "firefox",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 47.13,
+    "status": "passed",
+    "worker_id": "gw0"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:42.174133+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "firefox",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 1922.495,
+    "status": "passed",
+    "worker_id": "gw0"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:43.136739+00:00",
+    "test_name": "tests/test_security.py::test_password_field",
+    "browser": "firefox",
+    "operation": "LoginPage.signup_with_credentials",
+    "elapsed_ms": 962.606,
+    "status": "passed",
+    "worker_id": "gw0"
+  }
+]

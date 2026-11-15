@@ -1,0 +1,5 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-15T06:50:40.226935+00:00,tests/test_cart_order.py::test_order[TC14],chrome,MainPage.verify_main_page_visible,33.815,passed,main
+2026-11-15T06:50:40.226963+00:00,tests/test_cart_order.py::test_order[TC14],chrome,MainPage.open_main_page,11210.965,passed,main
+2026-11-15T06:50:42.765595+00:00,tests/test_cart_order.py::test_order[TC14],chrome,MainPage.click_products,2538.628,passed,main
+2026-11-15T06:51:03.445685+00:00,tests/test_cart_order.py::test_order[TC14],chrome,ProductsPage.add_product,20680.077,failed,main

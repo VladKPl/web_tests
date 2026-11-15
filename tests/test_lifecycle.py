@@ -25,3 +25,12 @@ def test_remove_and_continue(driver, base_url):
     products = MainPage(driver, base_url).open_main_page().click_products()
     cart = products.add_product().click_view_cart()
     cart.remove_product().continue_shopping()
+
+
+@pytest.mark.cart
+@allure.title('Переход из каталога в карточку сохраняет название и цену')
+def test_catalog_detail(driver, base_url):
+    from src.pages.ProductsPage import ProductsPage
+    catalog = ProductsPage(driver, base_url).open_catalog()
+    expected = catalog.products()[0]
+    assert catalog.open_product().product() == expected

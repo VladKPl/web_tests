@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-11-14T19:59:59.264589+00:00",
+    "test_name": "tests/test_security.py::test_name_roundtrip[A]",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 5507.566,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T20:00:01.215111+00:00",
+    "test_name": "tests/test_security.py::test_name_roundtrip[A]",
+    "browser": "chrome",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 74.305,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T20:00:01.215152+00:00",
+    "test_name": "tests/test_security.py::test_name_roundtrip[A]",
+    "browser": "chrome",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 1950.544,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T20:00:02.825085+00:00",
+    "test_name": "tests/test_security.py::test_name_roundtrip[A]",
+    "browser": "chrome",
+    "operation": "LoginPage.signup_with_credentials",
+    "elapsed_ms": 1609.924,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T20:00:02.846026+00:00",
+    "test_name": "tests/test_security.py::test_name_roundtrip[A]",
+    "browser": "chrome",
+    "operation": "SignupPage.verify_name",
+    "elapsed_ms": 20.926,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

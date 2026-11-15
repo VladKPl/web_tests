@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": "2026-11-14T19:49:47.062992+00:00",
+    "test_name": "tests/test_cart_order.py::test_13_quantity",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 5558.483,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:49:49.953156+00:00",
+    "test_name": "tests/test_cart_order.py::test_13_quantity",
+    "browser": "chrome",
+    "operation": "MainPage.click_first_view_product",
+    "elapsed_ms": 2890.151,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:49:49.977380+00:00",
+    "test_name": "tests/test_cart_order.py::test_13_quantity",
+    "browser": "chrome",
+    "operation": "ProductDetailPage.verify_product_detail_opened",
+    "elapsed_ms": 24.207,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:49:50.080973+00:00",
+    "test_name": "tests/test_cart_order.py::test_13_quantity",
+    "browser": "chrome",
+    "operation": "ProductDetailPage.set_quantity",
+    "elapsed_ms": 103.575,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:49:50.718697+00:00",
+    "test_name": "tests/test_cart_order.py::test_13_quantity",
+    "browser": "chrome",
+    "operation": "ProductDetailPage.add_to_cart",
+    "elapsed_ms": 637.709,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:49:52.013292+00:00",
+    "test_name": "tests/test_cart_order.py::test_13_quantity",
+    "browser": "chrome",
+    "operation": "CartPage.verify_cart_page_displayed",
+    "elapsed_ms": 23.384,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:49:52.013318+00:00",
+    "test_name": "tests/test_cart_order.py::test_13_quantity",
+    "browser": "chrome",
+    "operation": "ProductDetailPage.click_view_cart",
+    "elapsed_ms": 1294.599,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:49:52.116433+00:00",
+    "test_name": "tests/test_cart_order.py::test_13_quantity",
+    "browser": "chrome",
+    "operation": "CartPage.items",
+    "elapsed_ms": 103.117,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

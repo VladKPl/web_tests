@@ -1,0 +1,6 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:52:18.875218+00:00,tests/test_smoke.py::test_home_and_login,firefox,MainPage.open_main_page,5881.686,passed,main
+2026-11-14T19:52:18.896312+00:00,tests/test_smoke.py::test_home_and_login,firefox,MainPage.verify_main_page_visible,21.074,passed,main
+2026-11-14T19:52:21.371457+00:00,tests/test_smoke.py::test_home_and_login,firefox,LoginPage.check_login_page_is_opened,45.999,passed,main
+2026-11-14T19:52:21.371484+00:00,tests/test_smoke.py::test_home_and_login,firefox,MainPage.click_signup_login,2475.152,passed,main
+2026-11-14T19:52:21.407707+00:00,tests/test_smoke.py::test_home_and_login,firefox,LoginPage.check_login_page_is_opened,36.221,passed,main

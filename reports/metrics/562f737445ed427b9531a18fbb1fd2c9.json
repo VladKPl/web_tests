@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-11-14T19:43:24.620111+00:00",
+    "test_name": "tests/test_auth.py::test_03_invalid_login",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 5701.489,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:26.493237+00:00",
+    "test_name": "tests/test_auth.py::test_03_invalid_login",
+    "browser": "chrome",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 1873.116,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:27.993026+00:00",
+    "test_name": "tests/test_auth.py::test_03_invalid_login",
+    "browser": "chrome",
+    "operation": "LoginPage.login_with_credentials",
+    "elapsed_ms": 1499.777,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:28.013079+00:00",
+    "test_name": "tests/test_auth.py::test_03_invalid_login",
+    "browser": "chrome",
+    "operation": "LoginPage.verify_login_error",
+    "elapsed_ms": 20.035,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:43:28.073960+00:00",
+    "test_name": "tests/test_auth.py::test_03_invalid_login",
+    "browser": "chrome",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 60.871,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

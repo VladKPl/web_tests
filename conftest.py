@@ -14,6 +14,29 @@ def pytest_addoption(parser):
     parser.addoption('--grid-url', default=settings.SELENIUM_GRID_URL)
     parser.addoption('--mode', choices=['remote', 'local'], default='remote' if settings.REMOTE_MODE else 'local')
     parser.addoption('--headless', action='store_true')
+    parser.addoption('--remote', action='store_true')
+    parser.addoption('--local', action='store_true')
+
+
+def pytest_configure(config):
+    from src.secrets import redact
+    original_factory = logging.getLogRecordFactory()
+    def safe_record(*args, **kwargs):
+        record = original_factory(*args, **kwargs)
+        record.msg = redact(record.getMessage())
+        record.args = ()
+        return record
+    logging.setLogRecordFactory(safe_record)
+    import allure_commons
+    from src.secrets import AllureRedactor
+    if not allure_commons.plugin_manager.has_plugin('credential-redactor'):
+        allure_commons.plugin_manager.register(AllureRedactor(), 'credential-redactor')
+    if config.getoption('--remote') and config.getoption('--local'):
+        raise pytest.UsageError('--remote and --local are mutually exclusive')
+    if config.getoption('--remote'):
+        config.option.mode = 'remote'
+    if config.getoption('--local'):
+        config.option.mode = 'local'
 
 
 @pytest.fixture(scope='session')
@@ -30,6 +53,7 @@ def grid_url(request):
 def driver(request, grid_url, base_url):
     browser = request.config.getoption('--browser')
     options = webdriver.ChromeOptions() if browser == 'chrome' else webdriver.FirefoxOptions()
+    options.page_load_strategy = 'eager'
     if request.config.getoption('--headless'):
         options.add_argument('--headless=new' if browser == 'chrome' else '-headless')
     if browser == 'chrome':
@@ -63,12 +87,18 @@ def driver(request, grid_url, base_url):
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     report = (yield).get_result()
+    from src.secrets import redact
+    if report.longrepr:
+        report.longrepr = redact(str(report.longrepr))
+    report.sections = [(title, redact(content)) for title, content in report.sections]
     if not report.failed:
         return
     instance = item.funcargs.get('driver')
     if instance is None:
         return
     artifact_id = item.name + '-' + uuid.uuid4().hex
+    import re
+    artifact_id = re.sub(r'[^A-Za-z0-9_.-]', '_', artifact_id)[:180]
     settings.SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
     try:
         screenshot = instance.get_screenshot_as_png()
@@ -92,10 +122,13 @@ def pytest_runtest_makereport(item, call):
 
 @pytest.fixture
 def unique_user():
+    from src.secrets import VALUES
     class TestUser(dict):
         def __repr__(self):
             return repr({k: '[REDACTED]' if k == 'password' else v for k, v in self.items()})
-    return TestUser(name='Test User', email=f'qa_{uuid.uuid4().hex}@example.com', password=uuid.uuid4().hex)
+    user = TestUser(name='Test User', email=f'qa_{uuid.uuid4().hex}@example.com', password=uuid.uuid4().hex)
+    VALUES.add(user['password'])
+    return user
 
 
 @pytest.fixture(autouse=True)

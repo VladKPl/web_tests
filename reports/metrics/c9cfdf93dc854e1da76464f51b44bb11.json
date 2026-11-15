@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-11-14T19:59:32.333266+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-test@]",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 5291.681,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:59:34.322475+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-test@]",
+    "browser": "chrome",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 70.742,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:59:34.322503+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-test@]",
+    "browser": "chrome",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 1989.213,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:59:34.708423+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-test@]",
+    "browser": "chrome",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 69.196,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:59:34.708447+00:00",
+    "test_name": "tests/test_security.py::test_registration_validation[QA-test@]",
+    "browser": "chrome",
+    "operation": "LoginPage.verify_invalid_signup",
+    "elapsed_ms": 385.935,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

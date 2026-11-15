@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-11-14T19:52:22.795631+00:00",
+    "test_name": "tests/test_smoke.py::test_home_and_login",
+    "browser": "chrome",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 10446.347,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:52:22.819926+00:00",
+    "test_name": "tests/test_smoke.py::test_home_and_login",
+    "browser": "chrome",
+    "operation": "MainPage.verify_main_page_visible",
+    "elapsed_ms": 24.278,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:52:29.374136+00:00",
+    "test_name": "tests/test_smoke.py::test_home_and_login",
+    "browser": "chrome",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 65.366,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:52:29.374160+00:00",
+    "test_name": "tests/test_smoke.py::test_home_and_login",
+    "browser": "chrome",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 6554.213,
+    "status": "passed",
+    "worker_id": "main"
+  },
+  {
+    "timestamp": "2026-11-14T19:52:29.429990+00:00",
+    "test_name": "tests/test_smoke.py::test_home_and_login",
+    "browser": "chrome",
+    "operation": "LoginPage.check_login_page_is_opened",
+    "elapsed_ms": 55.83,
+    "status": "passed",
+    "worker_id": "main"
+  }
+]

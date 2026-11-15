@@ -1,0 +1,10 @@
+timestamp,test_name,browser,operation,elapsed_ms,status,worker_id
+2026-11-14T19:58:53.373186+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,MainPage.open_main_page,3873.803,passed,main
+2026-11-14T19:58:55.293305+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,LoginPage.check_login_page_is_opened,64.519,passed,main
+2026-11-14T19:58:55.293331+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,MainPage.click_signup_login,1920.102,passed,main
+2026-11-14T19:58:56.816551+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,LoginPage.signup_with_credentials,1523.218,passed,main
+2026-11-14T19:59:00.228607+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,AccountCreatedPage.verify_created_msg,28.572,passed,main
+2026-11-14T19:59:00.229400+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,SignupPage.register_user,3412.75,failed,main
+2026-11-14T19:59:02.637591+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,MainPage.open_main_page,2406.566,passed,main
+2026-11-14T19:59:03.950957+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,MainPage.click_delete_account,1300.991,passed,main
+2026-11-14T19:59:03.978505+00:00,tests/test_lifecycle.py::test_cleanup_after_registration_check_failure,chrome,AccountDeletedPage.verify_deleted_msg,27.534,passed,main

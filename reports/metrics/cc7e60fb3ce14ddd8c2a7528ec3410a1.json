@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2026-11-15T06:35:26.065698+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "MainPage.verify_main_page_visible",
+    "elapsed_ms": 67.321,
+    "status": "passed",
+    "worker_id": "gw1"
+  },
+  {
+    "timestamp": "2026-11-15T06:35:26.065737+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "MainPage.open_main_page",
+    "elapsed_ms": 25776.747,
+    "status": "passed",
+    "worker_id": "gw1"
+  },
+  {
+    "timestamp": "2026-11-15T06:35:26.120161+00:00",
+    "test_name": "tests/test_auth.py::test_04_logout",
+    "browser": "firefox",
+    "operation": "MainPage.click_signup_login",
+    "elapsed_ms": 54.421,
+    "status": "failed",
+    "worker_id": "gw1"
+  }
+]
